@@ -1,0 +1,57 @@
+<label>:
+     font_name: 'Roboto'
+     font_size: 60
+     markup: True
+     color:(1,1,1,1)
+<RobotoButton@Button>:
+     border: (2, 2, 2, 2)
+     font_name: 'Roboto'
+     font_size: 25
+     bold: True
+<RoundedButton@Button>
+     background_color: (0,0,0,0)
+     background_normal: ''
+     canvas.before:
+          Color:
+               rgba: (0,1,0,1)
+          RoundedRectangle:
+               size: self.size
+               pos: self.pos
+               radius: [58]
+BoxLayout:
+     orientation: 'vertical'
+     Label:
+          id: time
+          text: 'Automatic generation system'
+          color:(0,1,0,1)
+     AnchorLayout:
+          anchor_x: 'center'
+          RoundedButton:
+               id: start_stop
+               text: 'Start'
+               pos_hint: {'center_x': 5}
+               size_hint: (.5, .8)
+               #background_color: (0,1,0,1)
+               #background_normal: ''
+               on_press: app.start_stop()
+
+
+     Label:
+          id: stopwatch
+          text: '00:00.[size=40]00[/size]'
+     
+     BoxLayout:
+          height: 90
+          orientation: 'horizontal'
+          padding: 20
+          spacing: 20
+          size_hint: (1, 0)
+          Label:
+               text: "1st remainder"
+               size_hint_x: .80
+               font_size:20
+               color:(1,0,1,1)
+          CheckBox:
+               color:.294, .761, .623
+               on_active: app.checkbox_click(self, self.active)
+               size_hint_x: .20

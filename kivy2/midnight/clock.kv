@@ -1,0 +1,40 @@
+<label>:
+     font_name: 'Roboto'
+     font_size: 60
+     markup: True
+     color:(1,1,1,1)
+<RobotoButton@Button>:
+     border: (2, 2, 2, 2)
+     font_name: 'Roboto'
+     font_size: 25
+     bold: True
+<RoundedButton@Button>
+     background_color: (0,0,0,0)
+     background_normal: ''
+     canvas.before:
+          Color:
+               rgba: (0,1,0,1)
+          RoundedRectangle:
+               size: self.size
+               pos: self.pos
+               radius: [70]
+BoxLayout:
+     orientation: 'vertical'
+     Label:
+          id: time
+          color:(0,1,0,1)
+          text:'Reminder Generation' 
+     AnchorLayout:        
+          RoundedButton:
+               id:start_stop
+               text:"Start"
+               pos_hint:{'center_x':.3, 'center_y':0.4}
+               size_hint:(0.2,0.4)
+               background_color:(0,1,0,1)
+               font_size:20  
+               on_press:app.start_stop()             
+         
+
+     Label:
+          id: stopwatch
+          text: '00:00.[size=40]00[/size]'

@@ -1,0 +1,36 @@
+<label>:
+     font_name: 'Roboto'
+     font_size: 60
+     markup: True
+     color:(1,1,1,1)
+<RobotoButton@Button>:
+     border: (2, 2, 2, 2)
+     font_name: 'Roboto'
+     font_size: 25
+     bold: True
+<RoundedButton@Button>
+     background_color: (0,0,0,0)
+     background_normal: ''
+     canvas.before:
+          Color:
+               rgba: (0,1,0,1)
+          RoundedRectangle:
+               size: self.size
+               pos: self.pos
+               radius: [58]
+BoxLayout:
+     orientation: 'vertical'
+     Label:
+          id: time
+          text: 'Automatic generation system'
+          color:(0,1,0,1)
+     AnchorLayout:
+          anchor_x: 'center'
+          RoundedButton:
+               id: newbutton
+               text: 'Start'
+               pos_hint: {'center_x': 5}
+               size_hint: (.5, .8)
+               #background_color: (0,1,0,1)
+               #background_normal: ''
+               on_press: app.hy()

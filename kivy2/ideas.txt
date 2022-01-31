@@ -1,0 +1,1 @@
+put checkox in a label and try to identify the active checkboxes with labels attached.
