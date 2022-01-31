@@ -1,0 +1,3 @@
+title=KivySoundRecorder
+author=DeveloperXY
+orientation=portrait
